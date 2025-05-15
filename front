@@ -1,0 +1,28 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI 질문 시스템</title>
+</head>
+<body>
+  <h2>AI에게 질문해보세요</h2>
+  <input type="text" id="question" placeholder="무엇이든 물어보세요" />
+  <button onclick="sendQuestion()">질문하기</button>
+  <p><strong>답변:</strong> <span id="answer"></span></p>
+
+  <script>
+    async function sendQuestion() {
+      const input = document.getElementById("question").value;
+
+      const res = await fetch("https://너의-백엔드-주소.onrender.com/api", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input })
+      });
+
+      const data = await res.json();
+      document.getElementById("answer").innerText = data.reply;
+    }
+  </script>
+</body>
+</html>
