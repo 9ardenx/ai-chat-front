@@ -14,7 +14,7 @@
     async function sendQuestion() {
       const input = document.getElementById("question").value;
 
-      const res = await fetch("https://ai-chat-backend-myf6.onrender.com", {
+      const res = await fetch("https://ai-chat-backend-myf6.onrender.com/api", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input })
@@ -26,3 +26,4 @@
   </script>
 </body>
 </html>
+
