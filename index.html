@@ -14,7 +14,7 @@
     async function sendQuestion() {
       const input = document.getElementById("question").value;
 
-      const res = await fetch("https://너의-백엔드-주소.onrender.com/api", {
+      const res = await fetch("https://ai-chat-backend-myf6.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input })
